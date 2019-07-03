@@ -1,16 +1,29 @@
 {
-  "name": "bluespring-landing",
-  "version": "1.0.0",
-  "description": "a landing page for bluespring financial",
-  "main": "server.js",
+  "name": "bluespring",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"nodemon ./bin/www\" \"gulp scss\" "
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://bitbucket.org/munroecreativepartners/bluespring.git"
+  "browserslist":["cover 99.5% in US"],
+  "dependencies": {
+    "concurrently": "^4.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-handlebars": "^3.1.0",
+    "gulp-autoprefixer": "^6.1.0",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "node-sass-middleware": "0.11.0",
+    "nodemon": "^1.19.1"
   },
-  "author": "alex szeliga",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/munroecreativepartners/bluespring#readme"
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-sass": "^4.0.2"
+  }
 }
