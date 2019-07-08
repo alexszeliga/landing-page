@@ -1,8 +1,9 @@
 * {
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  text-rendering: optimizeLegibility; }
 
 header {
-  max-width: 960px !important; }
+  max-width: 1200px !important; }
 
 h2 {
   font-size: 45px;
@@ -14,28 +15,89 @@ h3 {
   line-height: 43px;
   font-weight: bold; }
 
-.hero-image {
-  max-width: 960px; }
+@media (max-width: 767px) {
+  .contact-container {
+    width: 100vw;
+    padding: 1em;
+    top: -80px;
+    background: white;
+    z-index: 10; }
+    .contact-container.scroll-past-nav {
+      position: fixed; }
+    .contact-container .cta {
+      font-size: 15px;
+      font-weight: 600; }
+    .contact-container .phone-number {
+      font-size: 17px;
+      font-weight: 900; } }
+
+@media (max-width: 767px) {
+  .logo-container {
+    width: 100%; }
+    .logo-container.scroll-past-nav {
+      margin-top: 61px; }
+    .logo-container img {
+      width: 100%; } }
+
+.hero-image-container {
+  max-width: 1200px;
+  overflow: hidden;
+  position: relative; }
+  .hero-image-container .hero-heading {
+    position: absolute;
+    height: 100%;
+    max-width: 425px;
+    z-index: 1;
+    font-size: 57px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 10px 0px 10px 10px rgba(255, 255, 255, 0.5);
+    transition: all 300ms; }
+    @media (max-width: 991px) {
+      .hero-image-container .hero-heading {
+        box-shadow: 10px 0px 10px 10px rgba(255, 255, 255, 0);
+        background-color: rgba(255, 255, 255, 0);
+        width: 100%;
+        font-size: 45px;
+        font-weight: 400;
+        max-width: 100%;
+        height: auto; } }
+  .hero-image-container .hero-image {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 100%; }
 
 .hero-blue-box {
   background-color: #0077cc;
   position: relative;
-  padding-top: 6em;
-  margin-top: -6em;
+  padding-top: 8em;
+  margin-top: -8em;
   z-index: -1; }
 
 .media-body p {
   font-size: 16px;
   line-height: 36px; }
+  @media (max-width: 767px) {
+    .media-body p {
+      line-height: 26px; } }
 
 .media-body h4 {
   font-size: 26px;
   line-height: 36px;
   letter-spacing: 0.25px;
   font-weight: bold; }
+  @media (max-width: 991px) {
+    .media-body h4 {
+      font-size: 23px;
+      line-height: 29px; } }
+
+.content-footer .content-footer-copy {
+  color: #0077cc;
+  font-size: 19px;
+  font-weight: bold; }
 
 .white-text {
-  color: #FFF; }
+  color: #fff; }
 
 .blue-text {
   color: #0077cc; }
@@ -44,7 +106,7 @@ h3 {
   background-color: #0077cc; }
 
 footer {
-  background-color: #BCD1DC; }
+  background-color: #bcd1dc; }
 
 .cta {
   background-color: #0077cc;
@@ -57,3 +119,6 @@ footer {
 @media (min-width: 768px) {
   .narrow-content {
     max-width: 720px; } }
+
+.scroll-fade-target {
+  position: relative; }

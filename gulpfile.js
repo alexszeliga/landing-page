@@ -1,5 +1,4 @@
-
-const gulp = require('gulp');
+const { series, src, dest } = require('gulp');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const prefix = require('gulp-autoprefixer');
@@ -8,23 +7,27 @@ const prefix = require('gulp-autoprefixer');
 const scssFiles = 'src/scss/*.scss';
 const cssDestination = 'public/stylesheets/';
 
+// js paths
+const jsFiles = 'src/js/*.js';
+const jsDestination = 'public/javascripts/';
 
-
-gulp.task('scss', () => {
-    return gulp.src(scssFiles)
+function scssTask() {
+    // place code for scss task here
+    return src(scssFiles)
         .pipe(sass().on('error', sass.logError))
         .pipe(prefix())
-        .pipe(gulp.dest(cssDestination));
-} )
- 
-gulp.task('js', () =>
-    gulp.src('src/js/app.js')
+        .pipe(dest(cssDestination));
+}
+
+function jsTask() {
+    // place code for js task here
+    return src(jsFiles)
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(gulp.dest('public/javascripts'))
-);
-
-gulp.task('sass:watch', function () {
-    gulp.watch(scssFiles, ['scss']);
-  });
+        .pipe(dest(jsDestination));
+}
+  
+exports.scss = scssTask;
+exports.js = jsTask;
+exports.default = series(scssTask, jsTask);
