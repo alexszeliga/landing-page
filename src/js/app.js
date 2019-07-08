@@ -58,13 +58,14 @@
       addScrollClassToNav();
     }
     function addScrollClassToNav () {
-      if (getCurrentBreak(window.innerWidth).name === 'xs' && window.pageYOffset > $('#header-element').outerHeight() && !$('.contact-container').hasClass('scroll-past-nav')) {
+      if (getCurrentBreak(window.innerWidth).name === 'xs' && window.pageYOffset > ($('#header-element').outerHeight() + $('.contact-container').outerHeight()) && !$('.contact-container').hasClass('scroll-past-nav')) {
         $('#header-element > div').addClass('scroll-past-nav');
-        TweenMax.to($('.contact-container'), .3, {css:{top: "0px"}, ease:Power2.easeOut, onComplete: function () {
-
+        TweenMax.fromTo($('.contact-container'), .3, {css:{top:"-80px", opacity:0}},{css:{top: "0px", opacity:1}, ease:Power2.easeOut});
+      } else if (window.pageYOffset < ($('#header-element').outerHeight() + $('.contact-container').outerHeight()) && $('.contact-container').hasClass('scroll-past-nav')) {
+        TweenMax.to($('.contact-container'), .2, {css:{top: "-80px", opacity:0}, ease:Power2.easeOut, onComplete: function () {
+          $('#header-element > div').removeClass('scroll-past-nav');
+          TweenMax.to($('.contact-container'), 0.2, {css:{opacity:1}});
         }});
-      } else {
-        // $('#header-element > div').removeClass('scroll-past-nav');
       }
     }
     function windowScroll() {

@@ -19,7 +19,7 @@ h3 {
   .contact-container {
     width: 100vw;
     padding: 1em;
-    top: -80px;
+    top: 0px;
     background: white;
     z-index: 10; }
     .contact-container.scroll-past-nav {
@@ -35,7 +35,7 @@ h3 {
   .logo-container {
     width: 100%; }
     .logo-container.scroll-past-nav {
-      margin-top: 61px; }
+      margin-top: 77px; }
     .logo-container img {
       width: 100%; } }
 
