@@ -18,3 +18,7 @@ This repo is a development environment for quickly creating landing pages. It us
 * Type `npm install` to pull in all the relevant dependencies
 * type `npm start` to start the server and Gulp's watch function.
   * Gulp will watch `src/scss/*.scss` files and `src/js/*.js` files and will retranspile them on changes to the file.
+
+# In the pipeline
+* Optimized deploy build
+* More stack: Flat DB middleware and a controller.
