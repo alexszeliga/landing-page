@@ -6,11 +6,11 @@ const sourcemaps = require('gulp-sourcemaps');
 
 // style paths
 const scssFiles = 'src/scss/*.scss';
-const cssDestination = 'public/stylesheets/';
+const cssDestination = '../';
 
 // js paths
 const jsFiles = 'src/js/*.js';
-const jsDestination = 'public/javascripts/';
+const jsDestination = '../';
 
 function scssTask() {
     // place code for scss task here
