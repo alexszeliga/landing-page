@@ -2,7 +2,7 @@ const { series, src, dest, watch } = require('gulp');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const prefix = require('gulp-autoprefixer');
-const sourcemaps = require('gulp-sourcemaps');
+// const sourcemaps = require('gulp-sourcemaps');
 
 // style paths
 const scssFiles = 'src/scss/*.scss';
@@ -15,21 +15,21 @@ const jsDestination = '../';
 function scssTask() {
     // place code for scss task here
     return src(scssFiles)
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(prefix())
-        .pipe(sourcemaps.write())
+        // .pipe(sourcemaps.write())
         .pipe(dest(cssDestination));
 }
 
 function jsTask() {
     // place code for js task here
     return src(jsFiles)
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(sourcemaps.write())
+        // .pipe(sourcemaps.write())
         .pipe(dest(jsDestination));
 }
 
